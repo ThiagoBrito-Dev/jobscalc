@@ -24,18 +24,11 @@
     <link rel="stylesheet" href="/styles/pages/job.css" />
   </head>
   <body id="page-job">
-    <header class="page-header inner">
-      <div class="container animate-up">
-        <a href="index.html" class="back">
-          <img src="/images/back.svg" alt="" />
-        </a>
-        <h1>Adicionar Novo Job</h1>
-      </div>
-    </header>
+    <%- include("parts/page-header", { title: "Adicionar Novo Job"}) %>
 
     <div class="container flex animate-up delay-2">
       <main>
-        <form id="form-job">
+        <form action="/job" method="POST" id="form-job">
           <fieldset>
             <legend>Dados do Job</legend>
             <div class="separator light"></div>
@@ -82,7 +75,7 @@
           >
             Salvar
           </button>
-          <a href="index.html" class="button gray">
+          <a href="/" class="button gray">
             <img
               src="/images/trash-24.svg"
               alt="Cancelar cadastro"
