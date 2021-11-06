@@ -10,7 +10,7 @@ module.exports = {
 
     const timeDifferenceInMilliseconds = dueDayInMilliseconds - Date.now();
     const dayInMilliseconds = 1000 * 60 * 60 * 24;
-    const remainingDays = Math.floor(
+    const remainingDays = Math.ceil(
       timeDifferenceInMilliseconds / dayInMilliseconds
     );
 
