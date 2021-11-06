@@ -33,7 +33,7 @@
         <p>
           O valor da sua hora é <br />
           <strong
-            >R$ <%= profile["value-per-hour"].toFixed().replace(".", ",") %>
+            >R$ <%= String(profile["value-per-hour"]).replace(".", ",") %>
           </strong>
         </p>
         <button class="button green" form="form-profile" type="submit">
