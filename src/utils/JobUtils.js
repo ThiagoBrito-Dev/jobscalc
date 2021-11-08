@@ -16,7 +16,25 @@ module.exports = {
 
     return remainingDays;
   },
-  calculateBudget(job, valuePerHour) {
-    return valuePerHour * job["total-hours"];
+  getRemainingHours(job) {
+    const dateFormatter = Intl.DateTimeFormat("pt-BR", {
+      hour: "numeric",
+    });
+
+    const jobCreationHour = dateFormatter.format(job.created_at);
+    const jobDueHour = Number(jobCreationHour) + Number(job["total-hours"]);
+    const currentHour = dateFormatter.format(Date.now());
+    let remainingHours = jobDueHour - currentHour;
+
+    return remainingHours;
+  },
+  calculateBudget(valuePerHour, jobTotalHours) {
+    const budget = (valuePerHour * jobTotalHours).toLocaleString("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+      maximumFractionDigits: 2,
+    });
+
+    return budget;
   },
 };

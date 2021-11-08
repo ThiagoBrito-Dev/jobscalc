@@ -2,12 +2,21 @@ const Profile = require("../models/Profile");
 
 module.exports = {
   async index(request, response) {
-    return response.render("profile", { profile: await Profile.get() });
+    const profile = await Profile.get();
+    profile["monthly-budget"] = Number(
+      profile["monthly-budget"]
+    ).toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+
+    return response.render("profile", { profile });
   },
   async update(request, response) {
     const profile = await Profile.get();
 
     const data = request.body;
+    data["monthly-budget"] = Number(
+      data["monthly-budget"].replace(/[^0-9\,]/g, "").replace(",", ".")
+    ).toFixed(2);
+
     const weeksPerYear = 52;
     const averageWeeksWorkedInTheMonth =
       (weeksPerYear - data["vacation-weeks-per-year"]) / 12;

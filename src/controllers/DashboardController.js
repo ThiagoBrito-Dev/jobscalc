@@ -15,20 +15,39 @@ module.exports = {
     let totalJobHours = 0;
 
     const updatedJobs = jobs.map((job) => {
-      const remaining = JobUtils.getRemainingDays(job);
-      const status = remaining <= 0 ? "done" : "progress";
+      let onlyHoursLeft = false;
+      let remaining;
 
-      totalJobHours =
-        status == "progress" && totalJobHours + Number(job["daily-hours"]);
+      if (job["total-hours"] > job["daily-hours"]) {
+        remaining = JobUtils.getRemainingDays(job);
+      } else {
+        onlyHoursLeft = true;
+        remaining = JobUtils.getRemainingHours(job);
+      }
+
+      let status;
+
+      if (remaining <= 0) {
+        onlyHoursLeft = false;
+        status = "done";
+      } else {
+        status = "progress";
+        totalJobHours += Number(job["daily-hours"]);
+      }
+
       statusesCount[status]++;
 
-      const budget = JobUtils.calculateBudget(job, profile["value-per-hour"]);
+      const budget = JobUtils.calculateBudget(
+        profile["value-per-hour"],
+        job["total-hours"]
+      );
 
       return {
         ...job,
         remaining,
         status,
         budget,
+        onlyHoursLeft,
       };
     });
 

@@ -27,7 +27,10 @@ module.exports = {
       return response.send("Job not found!");
     }
 
-    job.budget = JobUtils.calculateBudget(job, profile["value-per-hour"]);
+    job.budget = JobUtils.calculateBudget(
+      profile["value-per-hour"],
+      job["total-hours"]
+    );
 
     return response.render("job-edit", { job });
   },

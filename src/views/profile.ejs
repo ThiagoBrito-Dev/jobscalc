@@ -4,6 +4,8 @@
     <%- include("parts/head-common") %>
     <link rel="stylesheet" href="/styles/partials/forms.css" />
     <link rel="stylesheet" href="/styles/pages/profile.css" />
+
+    <script src="/scripts/profile.js" defer></script>
   </head>
   <body id="page-profile">
     <%- include("parts/page-header", { title: "Meu Perfil" }) %>
@@ -61,7 +63,7 @@
                 <label for="monthly-budget"
                   >Quanto eu <br />quero ganhar por mês?</label
                 >
-                <input type="amount" step="0.1" id="monthly-budget"
+                <input type="text" step="0.1" id="monthly-budget"
                 name="monthly-budget" value="<%= profile["monthly-budget"] %>"
                 placeholder="R$" />
               </div>
@@ -87,8 +89,8 @@
 
               <div class="input-wrapper">
                 <label for="vacation-weeks-per-year"
-                  >Quantas semanas <br />
-                  por ano você quer tirar férias?</label
+                  >Quantas semanas/ano <br />
+                  eu quero tirar de férias?</label
                 >
                 <input type="number" id="vacation-weeks-per-year"
                 name="vacation-weeks-per-year" value="<%=

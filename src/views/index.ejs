@@ -66,13 +66,17 @@
             <div class="deadline column">
               <span>Prazo</span>
               <p>
-                <% if (job.status == "progress") { %> <%= job.remaining %> dias
-                para a entrega <% } else { %> Prazo encerrado <% } %>
+                <% if (job.onlyHoursLeft) { if (job.remaining > 1) { %> <%=
+                job.remaining %> horas restantes <% } else { %> <%=
+                job.remaining %> hora restante <% } %> <% } else if (job.status
+                == "progress") { if (job.remaining > 1) { %> <%= job.remaining
+                %> dias para a entrega <% } else { %> <%= job.remaining %> dia
+                para a entrega <% } %> <% } else { %> Prazo encerrado <% } %>
               </p>
             </div>
             <div class="amount column">
               <span>Valor</span>
-              <p>R$ <%= job.budget.toFixed(2).replace(".", ",") %></p>
+              <p><%= job.budget %></p>
             </div>
             <div class="status badge column">
               <%= job.status == "done" ? "Encerrado" : "Em andamento" %>
