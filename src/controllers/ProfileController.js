@@ -10,7 +10,7 @@ module.exports = {
     const data = request.body;
     const weeksPerYear = 52;
     const averageWeeksWorkedInTheMonth =
-      (weeksPerYear - data["vacation-per-year"]) / 12;
+      (weeksPerYear - data["vacation-weeks-per-year"]) / 12;
     const weeklyTotalWorkingHours =
       data["hours-per-day"] * data["days-per-week"];
     const monthlyTotalWorkingHours =

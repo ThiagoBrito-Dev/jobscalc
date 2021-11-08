@@ -11,7 +11,7 @@ const initializeDatabase = {
       monthly_budget INT,
       hours_per_day INT,
       days_per_week INT,
-      vacation_per_year INT,
+      vacation_weeks_per_year INT,
       value_per_hour INT
     )`);
     await database.exec(`CREATE TABLE jobs(
@@ -28,7 +28,7 @@ const initializeDatabase = {
       monthly_budget, 
       hours_per_day, 
       days_per_week, 
-      vacation_per_year,
+      vacation_weeks_per_year,
       value_per_hour
     ) VALUES (
       "Thiago Brito", 
@@ -56,7 +56,7 @@ const initializeDatabase = {
       total_hours,
       created_at
     ) VALUES (
-      "One Two Project",
+      "OneTwo Project",
       3,
       47,
       1617514376018

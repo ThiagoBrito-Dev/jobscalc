@@ -1,27 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#41414C" />
-
-    <link rel="shortcut icon" href="/images/favicon.png" type="image/png" />
-    <title>JobsCalc</title>
-
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-
-    <link rel="stylesheet" href="/styles/main.css" />
-    <link rel="stylesheet" href="/styles/partials/page-header.css" />
-    <link rel="stylesheet" href="/styles/partials/cards.css" />
-    <link rel="stylesheet" href="/styles/partials/buttons.css" />
+    <%- include("parts/head-common") %>
     <link rel="stylesheet" href="/styles/partials/forms.css" />
     <link rel="stylesheet" href="/styles/partials/modal.css" />
-    <link rel="stylesheet" href="/styles/partials/animations.css" />
     <link rel="stylesheet" href="/styles/pages/job.css" />
 
     <script src="/scripts/job-edit.js" type="module" defer></script>
@@ -31,7 +13,7 @@
 
     <div class="container flex animate-up delay-2">
       <main>
-        <form action="/job/<%= job.id %>" method="POST" id="form-job">
+        <form action="/job/edit/<%= job.id %>" method="POST" id="form-job">
           <fieldset>
             <legend>Dados do Job</legend>
             <div class="separator light"></div>
@@ -95,27 +77,7 @@
     </div>
     <!-- end container -->
 
-    <div class="modal-wrapper">
-      <div class="modal">
-        <img src="/images/trash-48.svg" alt="Excluir Job" title="Excluir Job" />
-        <h3>Excluir Job</h3>
-        <p>
-          Quer mesmo excluir esse job? <br />
-          Ele será apagado para sempre.
-        </p>
-        <footer>
-          <a class="button gray" href="#">Cancelar</a>
-          <button class="button red" type="submit" form="delete-job">
-            Excluir Job
-          </button>
-        </footer>
-      </div>
-      <form
-        method="post"
-        action="/job/delete/<%= job.id %> "
-        id="delete-job"
-      ></form>
-    </div>
-    <!-- end modal-wrapper -->
+    <%- include("parts/page-modal", { job }) %>
+    <!-- action added by variable -->
   </body>
 </html>

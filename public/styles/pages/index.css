@@ -89,7 +89,7 @@
   margin-bottom: 2rem;
 }
 
-.info > div {
+.info > p {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.625rem;
@@ -97,7 +97,7 @@
   margin-right: 2.5rem; /* 40px of 16px root*/
 }
 
-.info > div > strong {
+.info > p > strong {
   display: block;
 
   font-size: 1.5rem;
@@ -143,7 +143,7 @@
 /* 
  * main
 /* -------------------------------------------------- */
-main {
+main > section {
   margin-top: -2.825rem;
 }
 

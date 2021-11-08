@@ -40,7 +40,7 @@ module.exports = {
     };
 
     await Job.update(updatedJob, jobId);
-    return response.redirect(`/job/${jobId}`);
+    return response.redirect(`/job/edit/${jobId}`);
   },
   async delete(request, response) {
     const jobId = request.params.id;

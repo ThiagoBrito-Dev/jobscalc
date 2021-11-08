@@ -1,26 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#41414C" />
-
-    <link rel="shortcut icon" href="/images/favicon.png" type="image/png" />
-    <title>JobsCalc</title>
-
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-
-    <link rel="stylesheet" href="/styles/main.css" />
-    <link rel="stylesheet" href="/styles/partials/page-header.css" />
-    <link rel="stylesheet" href="/styles/partials/cards.css" />
-    <link rel="stylesheet" href="/styles/partials/buttons.css" />
+    <%- include("parts/head-common") %>
     <link rel="stylesheet" href="/styles/partials/modal.css" />
-    <link rel="stylesheet" href="/styles/partials/animations.css" />
     <link rel="stylesheet" href="/styles/pages/index.css" />
 
     <script src="/scripts/index.js" type="module" defer></script>
@@ -30,6 +12,7 @@
       <div class="container">
         <section id="top" class="animate-up">
           <h2 class="sr-only">Homepage</h2>
+
           <img id="logo" src="/images/logo.svg" alt="Logo" />
           <span id="notification">
             <img src="/images/alert-octagon.svg" alt="Alerta" />
@@ -48,18 +31,18 @@
           <h2 class="sr-only">Sumário</h2>
 
           <div class="info">
-            <div class="total">
+            <p class="total">
               <strong><%= statusesCount.total %></strong>
               Projetos ao total
-            </div>
-            <div class="in-progress">
+            </p>
+            <p class="in-progress">
               <strong><%= statusesCount.progress %></strong>
               Em andamento
-            </div>
-            <div class="finished">
+            </p>
+            <p class="finished">
               <strong><%= statusesCount.done %></strong>
               Encerrados
-            </div>
+            </p>
           </div>
           <a class="button orange" href="/job">
             <span>
@@ -71,8 +54,8 @@
       </div>
     </header>
 
-    <div class="container">
-      <main class="animate-up delay-2">
+    <main class="container">
+      <section class="animate-up delay-2">
         <h1 class="sr-only">Trabalhos</h1>
 
         <div class="cards">
@@ -97,7 +80,7 @@
             <div class="actions column flex">
               <p class="sr-only">Ações</p>
               <a
-                href="/job/<%= job.id %> "
+                href="/job/edit/<%= job.id %> "
                 class="button white edit"
                 title="Editar Job"
               >
@@ -111,27 +94,11 @@
           <% }) %>
         </div>
         <!-- end cards -->
-      </main>
-    </div>
+      </section>
+    </main>
     <!-- end container -->
 
-    <div class="modal-wrapper">
-      <div class="modal">
-        <img src="/images/trash-48.svg" alt="Excluir Job" title="Excluir Job" />
-        <h3>Excluir Job</h3>
-        <p>
-          Quer mesmo excluir esse job? <br />
-          Ele será apagado para sempre.
-        </p>
-        <footer>
-          <a class="button gray" href="#">Cancelar</a>
-          <button class="button red" type="submit" form="delete-job">
-            Excluir Job
-          </button>
-        </footer>
-      </div>
-      <form method="post" action="/job/delete" id="delete-job"></form>
-    </div>
-    <!-- end modal-wrapper -->
+    <%- include("parts/page-modal", { job: "" }) %>
+    <!-- action added by script -->
   </body>
 </html>
