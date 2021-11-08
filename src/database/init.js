@@ -8,11 +8,11 @@ const initializeDatabase = {
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       name TEXT,
       avatar TEXT,
-      monthly_budget INT,
+      monthly_budget REAL,
       hours_per_day INT,
       days_per_week INT,
       vacation_weeks_per_year INT,
-      value_per_hour INT
+      value_per_hour REAL
     )`);
     await database.exec(`CREATE TABLE jobs(
       id INTEGER PRIMARY KEY AUTOINCREMENT,
