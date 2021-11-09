@@ -15,20 +15,11 @@ module.exports = {
     let totalJobHours = 0;
 
     const updatedJobs = jobs.map((job) => {
-      let onlyHoursLeft = false;
-      let remaining;
-
-      if (job["total-hours"] > job["daily-hours"]) {
-        remaining = JobUtils.getRemainingDays(job);
-      } else {
-        onlyHoursLeft = true;
-        remaining = JobUtils.getRemainingHours(job);
-      }
-
+      const { remainingTime, typeOfTimeRemaining, hasLessThanOneDayToFinish } =
+        JobUtils.handleGettingRemainingTime(job);
       let status;
 
-      if (remaining <= 0) {
-        onlyHoursLeft = false;
+      if (remainingTime <= 0) {
         status = "done";
       } else {
         status = "progress";
@@ -44,10 +35,11 @@ module.exports = {
 
       return {
         ...job,
-        remaining,
         status,
         budget,
-        onlyHoursLeft,
+        remainingTime,
+        typeOfTimeRemaining,
+        hasLessThanOneDayToFinish,
       };
     });
 

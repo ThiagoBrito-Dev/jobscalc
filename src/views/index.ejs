@@ -66,12 +66,11 @@
             <div class="deadline column">
               <span>Prazo</span>
               <p>
-                <% if (job.onlyHoursLeft) { if (job.remaining > 1) { %> <%=
-                job.remaining %> horas restantes <% } else { %> <%=
-                job.remaining %> hora restante <% } %> <% } else if (job.status
-                == "progress") { if (job.remaining > 1) { %> <%= job.remaining
-                %> dias para a entrega <% } else { %> <%= job.remaining %> dia
-                para a entrega <% } %> <% } else { %> Prazo encerrado <% } %>
+                <% if (job.hasLessThanOneDayToFinish) { %> <%= job.remainingTime
+                %> <%= job.typeOfTimeRemaining %> para a entrega <% } else if
+                (job.status == "progress") { %> <%= job.remainingTime %> <%=
+                job.typeOfTimeRemaining %> para a entrega <% } else { %> Prazo
+                encerrado <% } %>
               </p>
             </div>
             <div class="amount column">
