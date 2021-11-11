@@ -16,6 +16,13 @@ module.exports = {
 
     return response.redirect("/");
   },
+  async start(request, response) {
+    const jobId = request.params.id;
+    const startedAt = Date.now();
+    await Job.start(startedAt, jobId);
+
+    return response.redirect("/");
+  },
   async show(request, response) {
     const jobs = await Job.get();
     const profile = await Profile.get();

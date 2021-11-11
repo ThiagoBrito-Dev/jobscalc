@@ -66,11 +66,12 @@
             <div class="deadline column">
               <span>Prazo</span>
               <p>
-                <% if (job.hasLessThanOneDayToFinish) { %> <%= job.remainingTime
-                %> <%= job.typeOfTimeRemaining %> para a entrega <% } else if
-                (job.status == "progress") { %> <%= job.remainingTime %> <%=
-                job.typeOfTimeRemaining %> para a entrega <% } else { %> Prazo
-                encerrado <% } %>
+                <% if (job.hasLessThanOneDayToFinish) { %> <%=
+                job.remainingTime%> <%= job.typeOfTimeRemaining %> para a
+                entrega <% } else { if (job.status == "unstarted") { %>
+                Indefinido <% } else if (job.status == "progress") { %> <%=
+                job.remainingTime %> <%= job.typeOfTimeRemaining %> para a
+                entrega <% } else { %> Prazo encerrado <% } %><% } %>
               </p>
             </div>
             <div class="amount column">
@@ -78,13 +79,29 @@
               <p><%= job.budget %></p>
             </div>
             <div class="status badge column">
-              <%= job.status == "done" ? "Encerrado" : "Em andamento" %>
+              <%= job.status == "unstarted" ? "Não iniciado" : job.status ==
+              "done" ? "Encerrado" : "Em andamento" %>
             </div>
             <div class="actions column flex">
               <p class="sr-only">Ações</p>
+              <% if (job.status == "unstarted") { %>
+              <form
+                action="/job/start/<%= job.id %>"
+                method="POST"
+                id="start-job"
+              ></form>
+              <button
+                type="submit"
+                form="start-job"
+                class="start button white"
+                title="Iniciar Job"
+              >
+                <img src="/images/play.svg" alt="Iniciar Job" />
+              </button>
+              <% } %>
               <a
                 href="/job/edit/<%= job.id %> "
-                class="button white edit"
+                class="edit button white"
                 title="Editar Job"
               >
                 <img src="/images/edit-24.svg" alt="Editar Job" />

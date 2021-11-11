@@ -83,6 +83,6 @@ button.button {
   padding: 0;
 }
 
-.actions .button + button {
+.actions .button + .button {
   margin-left: 0.5rem;
 }

@@ -9,6 +9,7 @@ module.exports = {
 
     const statusesCount = {
       total: jobs.length,
+      unstarted: 0,
       progress: 0,
       done: 0,
     };
@@ -19,7 +20,9 @@ module.exports = {
         JobUtils.handleGettingRemainingTime(job);
       let status;
 
-      if (remainingTime <= 0) {
+      if (!job.started_at) {
+        status = "unstarted";
+      } else if (remainingTime <= 0) {
         status = "done";
       } else {
         status = "progress";

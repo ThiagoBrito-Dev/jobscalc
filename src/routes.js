@@ -8,7 +8,7 @@ router.get("/", DashboardController.index);
 
 router.get("/job", JobController.create);
 router.post("/job", JobController.save);
-
+router.post("/job/start/:id", JobController.start);
 router.get("/job/edit/:id", JobController.show);
 router.post("/job/edit/:id", JobController.update);
 router.post("/job/delete/:id", JobController.delete);

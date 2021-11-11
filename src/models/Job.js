@@ -12,6 +12,7 @@ module.exports = {
       "daily-hours": job.daily_hours,
       "total-hours": job.total_hours,
       created_at: job.created_at,
+      started_at: job.started_at,
     }));
   },
   async create(newJob) {
@@ -27,6 +28,14 @@ module.exports = {
       ${newJob["total-hours"]},
       ${newJob.created_at}
     )`);
+    await database.close();
+  },
+  async start(startedAt, jobId) {
+    const database = await Database();
+    await database.run(`UPDATE jobs SET
+      started_at = ${startedAt}
+    WHERE id = ${jobId}
+    `);
     await database.close();
   },
   async update(updatedJob, jobId) {

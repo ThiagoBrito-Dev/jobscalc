@@ -223,9 +223,18 @@ main > section {
   line-height: 2.125rem;
 }
 
+.column.deadline p {
+  padding-right: 0.75rem;
+}
+
 .column.actions button img {
   width: 1.5rem;
   height: 1.5rem;
+}
+
+.column.actions button:first-of-type img {
+  width: 1.75rem;
+  height: 1.75rem;
 }
 
 @media (max-width: 1390px) {
@@ -234,13 +243,31 @@ main > section {
   }
 }
 
+@media (max-width: 1100px) {
+  .card {
+    grid-template-columns: 5% 27.75% 21% 15% 17.25% 14%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .card {
+    grid-template-columns: 5% 26.75% 21.25% 15% 17.25% 14.75%;
+  }
+}
+
 @media (max-width: 970px) {
   .card {
-    grid-template-columns: 31% 23% 13% 20.25% 12.25%;
+    grid-template-columns: 30% 23% 13% 20.25% 13.75%;
   }
 
   .column.id {
     display: none;
+  }
+}
+
+@media (max-width: 840px) {
+  .card {
+    grid-template-columns: 25% 23% 13.25% 20.25% 18.5%;
   }
 }
 
