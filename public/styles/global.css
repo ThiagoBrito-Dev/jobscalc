@@ -18,7 +18,7 @@
   --color-input-text: #464652;
   --color-button-text: #fff;
   --color-switcher-thumb: #d88014;
-  --color-switcher-track: #41414c;
+  --color-switcher-track: #f0f2f5;
   --color-plus-background: #f0f2f5;
   --color-hairline-in-dark: #4f4f5b;
   --color-hairline-in-light: #e1e3e5;
@@ -49,7 +49,7 @@
 
 :root.dark-theme {
   --color-background: #353538;
-  --color-switcher-track: #fff;
+  --color-switcher-track: #353538;
   --color-hairline-in-light: #45454e;
 
   --color-card-background: #555558;
