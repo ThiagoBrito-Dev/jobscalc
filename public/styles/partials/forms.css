@@ -37,7 +37,7 @@ label {
 
   font-family: "IBM Plex Sans", sans-serif;
   font-weight: 500;
-  color: #787880;
+  color: var(--color-card-content);
 
   margin-bottom: 1rem;
 }
@@ -46,18 +46,18 @@ input {
   font-family: "IBM Plex Sans", sans-serif;
   font-weight: 500;
 
-  background: #fcfdff;
+  background: var(--color-text);
 
-  border: 1px solid #e1e3e6;
+  border: 1px solid var(--color-card-border);
   border-radius: 0.313rem;
 
   padding: 0.75rem 1.5rem;
 
   width: 100%;
 
-  color: var(--color-card-title);
+  color: var(--color-input-text);
 }
 
 ::placeholder {
-  color: #bfbfcc;
+  color: var(--color-card-label);
 }

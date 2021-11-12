@@ -1,8 +1,8 @@
 .card {
-  background: var(--color-text);
+  background: var(--color-card-background);
   border-radius: 0.313rem;
-  border: 1px solid #e1e3e6;
-  color: #5a5a66;
+  border: 1px solid var(--color-card-border);
+  color: var(--color-card-title);
 
   padding: 1.5rem;
 
@@ -27,7 +27,7 @@
 
 .unstarted .badge {
   background-color: var(--color-badge-unstarted-background);
-  color: var(--color-badge-unstarted-text);
+  color: var(--color-hairline-in-dark);
 }
 
 .progress .badge {

@@ -28,6 +28,11 @@
 /* 
  * avatar
 /* -------------------------------------------------- */
+#top > div {
+  display: flex;
+  align-items: center;
+}
+
 #avatar-profile {
   display: flex;
   align-items: center;
@@ -57,7 +62,6 @@
 }
 
 #avatar-profile p span:hover {
-  text-decoration: underline;
   color: var(--color-secondary);
 }
 
@@ -65,7 +69,7 @@
   width: 4rem; /* 64px of 16px root*/
   height: 4rem; /* 64px of 16px root*/
   border-radius: 50%;
-  border: 0.156rem solid #f1972c; /* 2.5px of 16px root*/
+  border: 0.156rem solid var(--color-secondary); /* 2.5px of 16px root*/
 }
 
 /* 
@@ -117,7 +121,7 @@
   width: 2rem;
   height: 2rem;
   content: " ";
-  background-color: var(--color-background);
+  background-color: var(--color-plus-background);
   opacity: 0.16;
   border-radius: 0.313rem; /* 5px of 16px root*/
 
@@ -165,10 +169,10 @@ main > section {
 .card:hover {
   background: linear-gradient(
       90deg,
-      rgba(250, 156, 45, 0.1) 0.45%,
-      rgba(252, 253, 255, 0.1) 31.4%
+      var(--color-card-initial-gradient) 0.45%,
+      var(--color-card-background) 31.4%
     ),
-    white;
+    var(--color-card-background);
 }
 
 .card::before {

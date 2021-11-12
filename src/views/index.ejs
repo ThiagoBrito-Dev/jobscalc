@@ -19,10 +19,16 @@
             <% if (freeHours <= 0) { %> Você não possui horas livres <% } else {
             %> Você tem <%= freeHours %> horas livres no seu dia <% } %>
           </span>
-          <a href="/profile" id="avatar-profile">
-            <p><%= profile.name %> <span>Ver perfil</span></p>
-            <img src="<%= profile.avatar %> " alt="Thiago Brito" />
-          </a>
+          <div>
+            <a href="/profile" id="avatar-profile">
+              <p><%= profile.name %> <span>Ver perfil</span></p>
+              <img src="<%= profile.avatar %> " alt="Thiago Brito" />
+            </a>
+            <button id="theme-switcher" class="v-switcher" type="button">
+              <span class="sr-only">Habilitar tema escuro</span>
+              <span></span>
+            </button>
+          </div>
         </section>
 
         <div class="separator"></div>

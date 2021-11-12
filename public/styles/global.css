@@ -1,0 +1,142 @@
+/* global remove user-agent styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* custom vars */
+:root {
+  --color-background: #f0f2f5;
+  --color-text: #fcfdff; /* #0e0f11 -> green button */ /* #000 -> red button */
+
+  --color-primary: #41414c;
+  --color-secondary: #f1972c;
+  --color-secondary-hover: #df8920;
+
+  --color-input-background: #f8f8fc;
+  --color-input-text: #464652;
+  --color-button-text: #fff;
+  --color-switcher-thumb: #d88014;
+  --color-switcher-track: #41414c;
+  --color-plus-background: #f0f2f5;
+  --color-hairline-in-dark: #4f4f5b;
+  --color-hairline-in-light: #e1e3e5;
+
+  --color-card-border: #e1e3e5;
+  --color-card-background: #fcfdff;
+  --color-card-initial-gradient: rgba(250, 156, 45, 0.175);
+  --color-card-title: #5a5a66;
+  --color-card-label: #bfbfcc;
+  --color-card-content: #787880;
+
+  --color-cancel: #e1e3e5;
+  --color-cancel-hover: #e7e9eb;
+  --color-cancel-text: #484853;
+  --color-delete: #eb3b35;
+  --color-delete-hover: #fd3b34;
+  --color-save: #36b336;
+  --color-save-hover: #3cc73c;
+
+  --color-badge-unstarted-background: #eaeaee;
+  --color-badge-progress-text: #006000;
+  --color-badge-progress-background: #e8f8e8;
+  --color-badge-done-text: #9d1b16;
+  --color-badge-done-background: #faeceb;
+
+  --color-header-inner-title: #bfbfcc;
+}
+
+:root.dark-theme {
+  --color-background: #353538;
+  --color-switcher-track: #fff;
+  --color-hairline-in-light: #45454e;
+
+  --color-card-background: #555558;
+  --color-card-title: #fcfdff;
+  --color-card-border: #696969;
+  --color-card-label: #a5a5b1; /* #cbcbd5 */
+  --color-card-content: #c5c5c5;
+
+  --color-cancel: #353537;
+  --color-cancel-hover: #323234;
+  --color-cancel-text: #fcfdff;
+}
+
+/* tags styling */
+body {
+  background: var(--color-background);
+  padding-bottom: 32px;
+}
+
+body,
+input,
+button,
+textarea {
+  font: 500 1rem Inter;
+  color: var(--color-text);
+  border: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* basic classes */
+.container {
+  width: min(1440px, 90vw);
+  margin: 0 auto;
+}
+
+.sr-only {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.separator {
+  height: 1px;
+  background-color: var(--color-hairline-in-dark);
+  margin: 1rem 0;
+}
+
+.separator.light {
+  background-color: var(--color-hairline-in-light);
+}
+
+.flex {
+  display: flex;
+}
+
+/* user-agent font-size is 16px, let's make it responsive */
+@media (max-width: 1080px) {
+  html {
+    font-size: 93.75%; /* 15px */
+  }
+}
+
+@media (max-width: 970px) {
+  html {
+    font-size: 87.5%; /* 14px */
+  }
+}
+
+@media (max-width: 700px) {
+  :root {
+    font-size: 75%; /* 12px */
+  }
+}
+
+@media (max-width: 590px) {
+  :root {
+    font-size: 62.25%; /* 10px */
+  }
+}

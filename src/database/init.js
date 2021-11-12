@@ -32,7 +32,7 @@ const initializeDatabase = {
       value_per_hour
     ) VALUES (
       "Anônimo",
-      "https://via.placeholder.com/180?text=180x180",
+      "https://via.placeholder.com/180/fcfdff/5a5a66?text=180x180",
       0,
       0,
       0,
