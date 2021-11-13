@@ -8,7 +8,7 @@
 /* custom vars */
 :root {
   --color-background: #f0f2f5;
-  --color-text: #fcfdff; /* #0e0f11 -> green button */ /* #000 -> red button */
+  --color-text: #fcfdff;
 
   --color-primary: #41414c;
   --color-secondary: #f1972c;
