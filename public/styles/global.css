@@ -66,7 +66,7 @@
 /* tags styling */
 body {
   background: var(--color-background);
-  padding-bottom: 32px;
+  padding-bottom: 2rem;
 }
 
 body,

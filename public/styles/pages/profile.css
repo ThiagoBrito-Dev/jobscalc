@@ -45,3 +45,17 @@ aside p {
 main {
   flex: 1;
 }
+
+@media (max-width: 875px) {
+  .page-header.inner {
+    margin-bottom: 2rem;
+  }
+
+  #page-profile #profile {
+    flex-direction: column;
+  }
+
+  aside.card {
+    margin: 0 auto 1.375rem;
+  }
+}

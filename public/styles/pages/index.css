@@ -13,6 +13,12 @@
   height: 3rem;
 }
 
+#logo-alt {
+  display: none;
+  width: 3.25rem;
+  height: 3.25rem;
+}
+
 /* 
  * notification
 /* -------------------------------------------------- */
@@ -23,6 +29,8 @@
   font-family: "Inter", sans-serif;
   font-weight: 500;
   font-size: 1rem;
+
+  margin: 0 1.25rem;
 }
 
 #notification img {
@@ -50,7 +58,7 @@
 #avatar-profile p {
   font-size: 1.25rem; /* 20px of 16px root*/
   line-height: 1.875rem; /*30px of 16px root*/
-  margin-right: 1.25rem;
+  margin-right: 0.75rem;
 
   font-weight: 600;
 }
@@ -374,11 +382,21 @@ main > section {
   }
 
   #summary .info > p + p {
-    margin-top: 0.6rem;
+    margin-top: 0.4rem;
   }
 
   .info > p > strong {
     display: inline;
     margin-right: 0.6rem;
+  }
+}
+
+@media (max-width: 428px) {
+  #logo {
+    display: none;
+  }
+
+  #logo-alt {
+    display: block;
   }
 }
