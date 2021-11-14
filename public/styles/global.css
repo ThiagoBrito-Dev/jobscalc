@@ -12,13 +12,12 @@
 
   --color-primary: #41414c;
   --color-secondary: #f1972c;
-  --color-secondary-hover: #df8920;
+  --color-secondary-hover: #d88014;
 
   --color-input-background: #f8f8fc;
   --color-input-text: #464652;
   --color-button-text: #fff;
-  --color-switcher-thumb: #d88014;
-  --color-switcher-track: #f0f2f5;
+  --color-switcher-track: #fcfdff;
   --color-plus-background: #f0f2f5;
   --color-hairline-in-dark: #4f4f5b;
   --color-hairline-in-light: #e1e3e5;

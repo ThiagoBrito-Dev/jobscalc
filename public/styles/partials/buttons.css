@@ -9,7 +9,7 @@
   line-height: 1.625rem;
   text-transform: uppercase;
 
-  transition: all 0.2s;
+  transition-duration: 0.5s;
 
   cursor: pointer;
 
