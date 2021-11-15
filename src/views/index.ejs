@@ -43,7 +43,8 @@
           <div class="info">
             <p class="total">
               <strong><%= statusesCount.total %></strong>
-              Projetos ao total
+              <% if (statusesCount.total === 1) { %> Projeto ao total <% } else
+              { %> Projetos ao total <% } %>
             </p>
             <p class="in-progress">
               <strong><%= statusesCount.progress %></strong>
@@ -51,7 +52,8 @@
             </p>
             <p class="finished">
               <strong><%= statusesCount.done %></strong>
-              Encerrados
+              <% if (statusesCount.done === 1) { %> Encerrado <% } else { %>
+              Encerrados <% } %>
             </p>
           </div>
           <a class="button orange" href="/job">
