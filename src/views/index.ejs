@@ -75,18 +75,36 @@
             <div class="name column"><%= job.name %></div>
             <div class="deadline column">
               <span>Prazo</span>
+              <% if (job.status == "unstarted") { %>
+              <span
+                title="O prazo para a entrega de um projeto é definido no momento em que o mesmo é iniciado"
+              >
+                Indefinido
+                <img src="/images/info.svg" alt="Ícone de informação" />
+              </span>
+              <% } else { %>
               <p>
                 <% if (job.hasLessThanOneDayToFinish) { %> <%=
                 job.remainingTime%> <%= job.typeOfTimeRemaining %> para a
-                entrega <% } else { if (job.status == "unstarted") { %>
-                Indefinido <% } else if (job.status == "progress") { %> <%=
+                entrega <% } else if (job.status == "progress") { %> <%=
                 job.remainingTime %> <%= job.typeOfTimeRemaining %> para a
-                entrega <% } else { %> Prazo encerrado <% } %><% } %>
+                entrega <% } else { %> Prazo encerrado <% } %>
               </p>
+              <% } %>
             </div>
             <div class="amount column">
               <span>Valor</span>
+
+              <% if (job.unformattedBudget) { %>
               <p><%= job.budget %></p>
+              <% } else { %>
+              <span
+                title="Preencha os dados do seu perfil para ter acesso ao valor dos projetos"
+              >
+                Indefinido
+                <img src="/images/info.svg" alt="Ícone de informação" />
+              </span>
+              <% } %>
             </div>
             <div class="status badge column">
               <%= job.status == "unstarted" ? "Não iniciado" : job.status ==
@@ -95,19 +113,15 @@
             <div class="actions column flex">
               <p class="sr-only">Ações</p>
               <% if (job.status == "unstarted") { %>
-              <form
-                action="/job/start/<%= job.id %>"
-                method="POST"
-                id="start-job"
-              ></form>
-              <button
-                type="submit"
-                form="start-job"
-                class="start button white"
-                title="Iniciar Job"
-              >
-                <img src="/images/play.svg" alt="Iniciar Job" />
-              </button>
+              <form action="/job/start/<%= job.id %>" method="POST">
+                <button
+                  type="submit"
+                  class="start button white"
+                  title="Iniciar Job"
+                >
+                  <img src="/images/play.svg" alt="Iniciar Job" />
+                </button>
+              </form>
               <% } %>
               <a
                 href="/job/edit/<%= job.id %>"

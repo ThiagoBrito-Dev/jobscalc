@@ -35,11 +35,13 @@ module.exports = {
         profile["value-per-hour"],
         job["total-hours"]
       );
+      const unformattedBudget = Number(budget.replace(/\D/g, ""));
 
       return {
         ...job,
         status,
         budget,
+        unformattedBudget,
         remainingTime,
         typeOfTimeRemaining,
         hasLessThanOneDayToFinish,

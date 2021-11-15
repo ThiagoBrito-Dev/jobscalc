@@ -18,6 +18,7 @@ aside.card {
 aside img {
   width: 11.25rem;
   height: 11.25rem;
+  object-fit: cover;
 
   border-radius: 50%;
   border: 0.25rem var(--color-secondary) solid;

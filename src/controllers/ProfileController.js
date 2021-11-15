@@ -24,9 +24,12 @@ module.exports = {
       data["hours-per-day"] * data["days-per-week"];
     const monthlyTotalWorkingHours =
       weeklyTotalWorkingHours * averageWeeksWorkedInTheMonth;
-    const valuePerHour = (
-      data["monthly-budget"] / monthlyTotalWorkingHours
-    ).toFixed(2);
+    let valuePerHour = 0;
+
+    if (monthlyTotalWorkingHours) {
+      valuePerHour = data["monthly-budget"] / monthlyTotalWorkingHours;
+      valuePerHour = valuePerHour.toFixed(2);
+    }
 
     await Profile.update({
       ...profile,

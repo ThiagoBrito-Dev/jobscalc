@@ -1,25 +1,25 @@
 module.exports = {
   handleGettingRemainingTime(job) {
     let hasLessThanOneDayToFinish = false;
-    let typeOfTimeRemaining = "dia"; // day
+    let typeOfTimeRemaining = "dias"; // days
     let remainingTime = this.getRemainingDays(job);
 
     if (remainingTime === 1) {
       hasLessThanOneDayToFinish = true;
 
-      typeOfTimeRemaining = "hora"; // hour
+      typeOfTimeRemaining = "horas"; // hours
       remainingTime = this.getRemainingHours(job);
 
       if (remainingTime === 1) {
         typeOfTimeRemaining = "minuto"; // minute
         remainingTime = this.getRemainingMinutes(job);
+
+        if (remainingTime > 1) {
+          typeOfTimeRemaining += "s"; // minutes
+        }
       }
 
       hasLessThanOneDayToFinish = remainingTime <= 0 && false;
-    }
-
-    if (remainingTime > 1) {
-      typeOfTimeRemaining += "s"; // days/hours/minutes
     }
 
     return {
