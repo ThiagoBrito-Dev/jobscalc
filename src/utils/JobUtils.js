@@ -1,21 +1,18 @@
 module.exports = {
   handleGettingRemainingTime(job) {
-    const creationDate = new Date(job.created_at);
     let hasLessThanOneDayToFinish = false;
-    let typeOfTimeRemaining = "";
-    let remainingTime;
+    let typeOfTimeRemaining = "dia"; // day
+    let remainingTime = this.getRemainingDays(job);
 
-    if (job["total-hours"] > job["daily-hours"]) {
-      typeOfTimeRemaining = "dia"; // day
-      remainingTime = this.getRemainingDays(creationDate, job);
-    } else {
+    if (remainingTime === 1) {
       hasLessThanOneDayToFinish = true;
+
       typeOfTimeRemaining = "hora"; // hour
-      remainingTime = this.getRemainingHours(creationDate, job);
+      remainingTime = this.getRemainingHours(job);
 
       if (remainingTime === 1) {
         typeOfTimeRemaining = "minuto"; // minute
-        remainingTime = this.getRemainingMinutes(creationDate);
+        remainingTime = this.getRemainingMinutes(job);
       }
 
       hasLessThanOneDayToFinish = remainingTime <= 0 && false;
@@ -31,7 +28,8 @@ module.exports = {
       hasLessThanOneDayToFinish,
     };
   },
-  getRemainingDays(creationDate, job) {
+  getRemainingDays(job) {
+    const creationDate = new Date(job.started_at);
     const initialRemainingDays = Number(
       (job["total-hours"] / job["daily-hours"]).toFixed()
     );
@@ -45,27 +43,55 @@ module.exports = {
 
     return remainingDays;
   },
-  getRemainingHours(creationDate, job) {
-    // const creationDay = creationDate.getDate();
-    // const currentDate = new Date(Date.now());
-    // const currentDay = currentDate.getDate();
-    // const difference = currentDay - creationDay;
-
-    const creationHour = creationDate.getHours();
-    const dueHour = creationHour + Number(job["total-hours"]);
-    const dueDate = creationDate.setHours(dueHour); // based on the due hour
-    const timeDifferenceInMs = dueDate - Date.now();
+  getRemainingHours(job) {
+    const creationDate = new Date(job.started_at);
     const hourInMs = 1000 * 60 * 60;
-    const remainingHours = Math.ceil(timeDifferenceInMs / hourInMs);
+    let remainingHours;
+
+    if (job["total-hours"] > job["daily-hours"]) {
+      const creationDay = creationDate.getDate();
+      const currentDate = new Date(Date.now());
+      const currentDay = currentDate.getDate();
+      const differenceBetweenDays = currentDay - creationDay;
+      const dueDay = creationDay + differenceBetweenDays;
+      const dueDate = creationDate.setDate(dueDay);
+      const timeDifferenceInMs = dueDate - Date.now();
+
+      remainingHours = Math.ceil(timeDifferenceInMs / hourInMs);
+    } else {
+      const creationHour = creationDate.getHours();
+      const dueHour = creationHour + job["total-hours"];
+      const dueDate = creationDate.setHours(dueHour); // based on the due hour
+      const timeDifferenceInMs = dueDate - Date.now();
+
+      remainingHours = Math.ceil(timeDifferenceInMs / hourInMs);
+    }
 
     return remainingHours;
   },
-  getRemainingMinutes(creationDate) {
-    const dueMinute = creationDate.getMinutes();
-    const dueDate = creationDate.setMinutes(dueMinute); // based on the due minute
-    const timeDifferenceInMs = dueDate - Date.now();
+  getRemainingMinutes(job) {
+    const creationDate = new Date(job.started_at);
     const minuteInMs = 1000 * 60;
-    const remainingMinutes = Math.ceil(timeDifferenceInMs / minuteInMs);
+    let remainingMinutes;
+
+    if (job["total-hours"] > job["daily-hours"]) {
+      const creationDay = creationDate.getDate();
+      const currentDate = new Date(Date.now());
+      const currentDay = currentDate.getDate();
+      const differenceBetweenDays = currentDay - creationDay;
+      const dueDay = creationDay + differenceBetweenDays;
+      const dueDate = creationDate.setDate(dueDay);
+      const timeDifferenceInMs = dueDate - Date.now();
+
+      remainingMinutes = Math.ceil(timeDifferenceInMs / minuteInMs);
+    } else {
+      const creationHour = creationDate.getHours();
+      const dueHour = creationHour + job["total-hours"];
+      const dueDate = creationDate.setHours(dueHour);
+      const timeDifferenceInMs = dueDate - Date.now();
+
+      remainingMinutes = Math.ceil(timeDifferenceInMs / minuteInMs);
+    }
 
     return remainingMinutes;
   },
