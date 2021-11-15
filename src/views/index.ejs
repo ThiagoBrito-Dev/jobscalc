@@ -23,8 +23,8 @@
           </span>
           <div>
             <a href="/profile" id="avatar-profile">
-              <p><%= profile.name %> <span>Ver perfil</span></p>
-              <img src="<%= profile.avatar %> " alt="Thiago Brito" />
+              <p><%= profile.name %><span>Ver perfil</span></p>
+              <img src="<%= profile.avatar %>" alt="Thiago Brito" />
             </a>
             <button id="theme-switcher" class="v-switcher" type="button">
               <span class="sr-only">Habilitar tema escuro</span>
@@ -70,7 +70,7 @@
 
         <div class="cards">
           <% jobs.forEach((job) => { %>
-          <div class="card <%= job.status %>" data-id="<%= job.id %> ">
+          <div class="card <%= job.status %>" data-id="<%= job.id %>">
             <div class="id column"><%= job.id %></div>
             <div class="name column"><%= job.name %></div>
             <div class="deadline column">
@@ -110,7 +110,7 @@
               </button>
               <% } %>
               <a
-                href="/job/edit/<%= job.id %> "
+                href="/job/edit/<%= job.id %>"
                 class="edit button white"
                 title="Editar Job"
               >
