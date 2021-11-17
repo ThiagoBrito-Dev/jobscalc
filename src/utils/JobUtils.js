@@ -49,11 +49,12 @@ module.exports = {
     let remainingHours;
 
     if (job["total-hours"] > job["daily-hours"]) {
+      const initialRemainingDays = Math.ceil(
+        job["total-hours"] / job["daily-hours"]
+      );
+
       const creationDay = creationDate.getDate();
-      const currentDate = new Date(Date.now());
-      const currentDay = currentDate.getDate();
-      const differenceBetweenDays = currentDay - creationDay + 1;
-      const dueDay = creationDay + differenceBetweenDays;
+      const dueDay = creationDay + initialRemainingDays;
       const dueDate = creationDate.setDate(dueDay);
       const timeDifferenceInMs = dueDate - Date.now();
 
@@ -75,11 +76,12 @@ module.exports = {
     let remainingMinutes;
 
     if (job["total-hours"] > job["daily-hours"]) {
+      const initialRemainingDays = Math.ceil(
+        job["total-hours"] / job["daily-hours"]
+      );
+
       const creationDay = creationDate.getDate();
-      const currentDate = new Date(Date.now());
-      const currentDay = currentDate.getDate();
-      const differenceBetweenDays = currentDay - creationDay;
-      const dueDay = creationDay + differenceBetweenDays;
+      const dueDay = creationDay + initialRemainingDays;
       const dueDate = creationDate.setDate(dueDay);
       const timeDifferenceInMs = dueDate - Date.now();
 
