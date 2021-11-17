@@ -7,13 +7,19 @@ module.exports = {
     return response.render("job");
   },
   async save(request, response) {
-    await Job.create({
+    const job = {
       name: request.body.name,
       "daily-hours": request.body["daily-hours"],
       "total-hours": request.body["total-hours"],
       created_at: Date.now(),
-    });
+      started_at: null,
+    };
 
+    if (request.body["autostart"]) {
+      job.started_at = Date.now();
+    }
+
+    await Job.create(job);
     return response.redirect("/");
   },
   async start(request, response) {

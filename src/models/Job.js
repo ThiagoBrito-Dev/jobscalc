@@ -21,12 +21,14 @@ module.exports = {
       name, 
       daily_hours, 
       total_hours, 
-      created_at
+      created_at,
+      started_at
     ) VALUES (
       "${newJob.name}",
       ${newJob["daily-hours"]},
       ${newJob["total-hours"]},
-      ${newJob.created_at}
+      ${newJob.created_at},
+      ${newJob.started_at}
     )`);
     await database.close();
   },

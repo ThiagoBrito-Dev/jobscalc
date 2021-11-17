@@ -24,6 +24,22 @@ form .input-group {
   margin-top: 1.5rem;
 }
 
+fieldset > .input-wrapper:last-child {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+fieldset > .input-wrapper:last-child input {
+  width: 0.9375rem;
+  height: 0.9375rem;
+  margin-right: 0.5rem;
+}
+
+fieldset > .input-wrapper:last-child label {
+  margin-bottom: 0;
+}
+
 .input-wrapper {
   width: 100%;
 }
