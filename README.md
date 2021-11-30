@@ -3,7 +3,7 @@
     <h1>JobsCalc</h1>
     <img src="./.github/jobscalc.png" />
     <h3>
-      👨‍💻 Uma aplicação JavaScript Vanilla para visualização, armazenamento e gerenciamento de trabalhos freelance
+      👨‍💻 Uma aplicação JavaScript Vanilla para visualização, armazenamento e gerenciamento de projetos freelance
     </h3>
   </div>
 
