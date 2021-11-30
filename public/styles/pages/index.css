@@ -217,6 +217,7 @@ main > section {
 .card .column span:last-child {
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .card .column span:last-child img {
