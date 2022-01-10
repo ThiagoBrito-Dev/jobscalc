@@ -4,7 +4,7 @@ const JobUtils = require("../utils/JobUtils");
 
 module.exports = {
   create(request, response) {
-    return response.render("job");
+    return response.render("new-job");
   },
   async save(request, response) {
     const job = {

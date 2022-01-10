@@ -16,8 +16,8 @@
 }
 
 /* 
- * notification
-/* -------------------------------------------------- */
+ * NOTIFICATION
+/* --------------------------------------------------- */
 #notification {
   display: flex;
   align-items: center;
@@ -32,12 +32,12 @@
 #notification img {
   width: 1.5rem;
   height: 1.5rem;
-  margin-right: 0.5rem; /* 8px of 16px root*/
+  margin-right: 0.5rem;
 }
 
 /* 
- * avatar
-/* -------------------------------------------------- */
+ * AVATAR
+/* --------------------------------------------------- */
 #top > div {
   display: flex;
   align-items: center;
@@ -46,29 +46,27 @@
 #avatar-profile {
   display: flex;
   align-items: center;
-  color: var(--color-white);
-  text-decoration: none;
+  text-align: right;
 
   font-family: "IBM Plex Sans", sans-serif;
-  text-align: right;
+  color: var(--color-white);
+  text-decoration: none;
 }
 
 #avatar-profile p {
-  font-size: 1.25rem; /* 20px of 16px root*/
-  line-height: 1.875rem; /*30px of 16px root*/
   margin-right: 0.75rem;
 
   font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 1.875rem;
 }
 
 #avatar-profile span {
   display: block;
 
-  font-weight: normal;
-  font-size: 0.875rem; /* 14px of 16px root*/
-  line-height: 1.5rem; /* 24px of 16px root*/
-
   font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
 }
 
 #avatar-profile p span:hover {
@@ -76,100 +74,99 @@
 }
 
 #avatar-profile img {
-  width: 4rem; /* 64px of 16px root*/
-  height: 4rem; /* 64px of 16px root*/
+  width: 4rem;
+  height: 4rem;
+
+  border: 0.156rem solid var(--color-secondary);
   border-radius: 50%;
-  border: 0.156rem solid var(--color-secondary); /* 2.5px of 16px root*/
 }
 
 /* 
- * summary
-/* -------------------------------------------------- */
+ * SUMMARY
+/* --------------------------------------------------- */
 #summary {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  margin: 2rem 0;
 }
 
 /* 
- * summary info
-/* -------------------------------------------------- */
+ * SUMMARY INFO
+/* --------------------------------------------------- */
 #summary .info {
   display: flex;
   font-family: "Inter", sans-serif;
 }
 
 .info > p {
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.625rem;
+  margin-right: 2.5rem;
 
-  margin-right: 2.5rem; /* 40px of 16px root*/
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.625rem;
 }
 
 .info > p > strong {
   display: block;
 
-  font-size: 1.5rem;
   font-weight: 700;
-  line-height: 1.625rem; /* 26px of 16px root*/
+  font-size: 1.5rem;
+  line-height: 1.625rem;
 }
 
 /* 
- * summary button
-/* -------------------------------------------------- */
+ * SUMMARY BUTTON
+/* --------------------------------------------------- */
 #summary .button {
   padding: 0.75rem 1.25rem 0.75rem 0.75rem;
 }
 
-#summary .button span::before {
+#summary .button > span:first-child::before {
+  content: " ";
+  position: absolute;
+
   width: 2rem;
   height: 2rem;
-  content: " ";
   background-color: var(--color-plus-background);
-  opacity: 0.16;
-  border-radius: 0.313rem; /* 5px of 16px root*/
-
-  position: absolute;
+  border-radius: 0.313rem;
+  opacity: 0.2;
 }
 
-#summary .button span {
-  width: 2rem;
-  height: 2rem;
-
-  margin-right: 1rem;
-
+#summary .button > span:first-child {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  margin-right: 1rem;
+  width: 2rem;
+  height: 2rem;
 }
 
-#summary .button span img {
+#summary .button > span:first-child img {
   width: 1.5rem;
   height: 1.5rem;
 }
 
 /* 
- * main
-/* -------------------------------------------------- */
+ * MAIN
+/* --------------------------------------------------- */
 main > section {
   margin-top: -2.825rem;
 }
 
 /* 
  * CARD
-/* -------------------------------------------------- */
+/* --------------------------------------------------- */
 .card {
+  position: relative;
+
   display: grid;
   grid-template-columns: 5% 35% 20% 15% 15% 10%;
   align-items: center;
 
   margin-bottom: 0.5rem;
-  position: relative;
-  transition: all 0.2s;
+  transition-duration: 0.2s;
 }
 
 .card:hover {
@@ -183,18 +180,15 @@ main > section {
 
 .card::before {
   content: " ";
-
-  width: 0.25rem;
-  height: 0%;
-  background-color: var(--color-secondary);
-
-  border-radius: 0.313rem 0 0 0.313rem;
-
   position: absolute;
   top: 0;
   left: -1px;
 
-  transition: all 0.2s;
+  width: 0.25rem;
+  height: 0%;
+  background-color: var(--color-secondary);
+  border-radius: 0.313rem 0 0 0.313rem;
+  transition-duration: 0.2s;
 }
 
 .card:hover::before {
@@ -210,10 +204,9 @@ main > section {
 
   font-family: "Inter", sans-serif;
   font-weight: 600;
-  font-size: 0.75rem; /* 12px of 16px root*/
-  text-transform: uppercase;
-
+  font-size: 0.75rem;
   color: var(--color-card-label);
+  text-transform: uppercase;
 }
 
 .card .column span:last-child {
@@ -307,10 +300,6 @@ main > section {
     gap: 0.5rem;
   }
 
-  .column.id {
-    display: none;
-  }
-
   .column.name {
     grid-area: lt;
   }
@@ -331,8 +320,7 @@ main > section {
 
 @media (max-width: 470px) {
   #summary {
-    margin-top: 1.2rem;
-    margin-bottom: 1.2rem;
+    margin: 1.2rem 0;
   }
 
   #summary .info {

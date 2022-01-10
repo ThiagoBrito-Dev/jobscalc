@@ -1,8 +1,8 @@
 aside.card {
-  width: 22rem;
   text-align: center;
   padding: 2.5rem 3.375rem;
   margin-left: 8rem;
+  width: 22rem;
 }
 
 aside > img {
@@ -34,7 +34,7 @@ aside .button + .button {
     margin-bottom: 1.5rem;
   }
 
-  .container {
+  .content-container {
     flex-direction: column;
   }
 

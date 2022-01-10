@@ -8,7 +8,7 @@
   <body id="page-job">
     <%- include("parts/page-header", { title: "Adicionar Novo Job"}) %>
 
-    <div class="container flex animate-up delay-2">
+    <div class="content-container flex animate-up delay-2">
       <main>
         <form action="/job" method="POST" id="form-job">
           <fieldset>
@@ -50,24 +50,17 @@
           </fieldset>
         </form>
       </main>
+
       <aside class="card">
-        <img src="/images/money-gray.svg" alt="Imagem de Dinheiro" />
+        <img src="/images/money-gray.svg" alt="Pacote de dinheiro" />
         <p>Preencha os dados para ver o valor do projeto</p>
+
         <div class="button-group">
-          <button
-            class="button green"
-            form="form-job"
-            type="submit"
-            title="Salvar Dados"
-          >
+          <button class="button green" form="form-job" type="submit">
             Salvar
           </button>
-          <a href="/" class="button gray">
-            <img
-              src="/images/trash-24.svg"
-              alt="Cancelar cadastro"
-              title="Cancelar cadastro"
-            />
+          <a href="/" class="button gray" title="Cancelar cadastro">
+            <img src="/images/trash-24.svg" alt="" />
           </a>
         </div>
       </aside>

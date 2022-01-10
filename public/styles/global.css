@@ -1,11 +1,11 @@
-/* global remove user-agent styling */
+/* CSS RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* custom vars */
+/* cCUSTOM VARIABLES */
 :root {
   --color-background: #f0f2f5;
   --color-text: #fcfdff;
@@ -62,9 +62,9 @@
   --color-cancel-text: #fcfdff;
 }
 
-/* tags styling */
+/* TAGS STYLES */
 body {
-  background: var(--color-background);
+  background-color: var(--color-background);
   padding-bottom: 2rem;
 }
 
@@ -81,8 +81,8 @@ a {
   text-decoration: none;
 }
 
-/* basic classes */
-.container {
+/* GLOBAL CLASSES */
+.content-container {
   width: min(1440px, 90vw);
   margin: 0 auto;
 }
@@ -115,7 +115,6 @@ a {
   display: flex;
 }
 
-/* user-agent font-size is 16px, let's make it responsive */
 @media (max-width: 1080px) {
   html {
     font-size: 93.75%; /* 15px */

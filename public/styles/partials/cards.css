@@ -1,28 +1,25 @@
 .card {
-  background: var(--color-card-background);
-  border-radius: 0.313rem;
-  border: 1px solid var(--color-card-border);
-  color: var(--color-card-title);
-
+  text-align: left;
   padding: 1.5rem;
 
-  text-align: left;
+  background-color: var(--color-card-background);
+  color: var(--color-card-title);
+  border: 1px solid var(--color-card-border);
+  border-radius: 0.313rem;
 }
 
 .badge {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0.5rem 1.5rem;
   width: fit-content;
 
-  border-radius: 2.5rem;
-  padding: 0.5rem 1.5rem;
-
   font-weight: 500;
-  font-size: 0.875rem; /* 14px of 16px root*/
-  line-height: 1.625rem; /* 26px of 16px root*/
-
+  font-size: 0.875rem;
+  line-height: 1.625rem;
   background-color: rgb(237, 237, 237);
+  border-radius: 2.5rem;
 }
 
 .unstarted .badge {
@@ -31,11 +28,11 @@
 }
 
 .progress .badge {
-  background: var(--color-badge-progress-background);
+  background-color: var(--color-badge-progress-background);
   color: var(--color-badge-progress-text);
 }
 
 .done .badge {
-  background: var(--color-badge-done-background);
+  background-color: var(--color-badge-done-background);
   color: var(--color-badge-done-text);
 }

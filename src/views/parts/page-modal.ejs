@@ -1,8 +1,9 @@
 <div class="modal-wrapper">
   <div class="modal">
     <header>
-      <img src="/images/trash-48.svg" alt="Excluir Job" title="Excluir Job" />
+      <img src="/images/trash-48.svg" alt="" />
     </header>
+
     <section>
       <h3>Excluir Job</h3>
       <p>
@@ -10,6 +11,7 @@
         Ele será apagado para sempre.
       </p>
     </section>
+
     <footer>
       <a class="button gray" href="#">Cancelar</a>
       <button class="button red" type="submit" form="delete-job">
@@ -17,8 +19,9 @@
       </button>
     </footer>
   </div>
+
   <form
-    method="post"
+    method="POST"
     action="<% if (job) { %>/job/delete/<%= job.id %><% } %>"
     id="delete-job"
   ></form>

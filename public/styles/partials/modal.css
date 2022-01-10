@@ -3,19 +3,17 @@
 }
 
 .modal-wrapper.on {
-  height: 100vh;
-  width: 100vw;
-
   position: fixed;
   top: 0;
   left: 0;
 
-  background: rgba(0, 0, 0, 0.75);
-
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
+  width: 100vw;
 
+  background-color: rgba(0, 0, 0, 0.75);
   visibility: visible;
   opacity: 1;
 }
@@ -23,7 +21,8 @@
 .modal {
   text-align: center;
   padding: 2.5rem;
-  background: var(--color-card-background);
+
+  background-color: var(--color-card-background);
   color: var(--color-card-content);
   border-radius: 0.313rem;
 }
@@ -33,14 +32,13 @@
 }
 
 .modal h3 {
-  color: var(--color-card-title);
+  margin-bottom: 0.5rem;
 
   font-family: "IBM Plex Sans", sans-serif;
   font-weight: 600;
   font-size: 2rem;
   line-height: 2.625rem;
-
-  margin-bottom: 0.5rem;
+  color: var(--color-card-title);
 }
 
 .modal p {
@@ -49,7 +47,6 @@
 
 .modal footer button {
   padding: 0.75rem 3rem;
-  border-radius: 0.313rem;
 
   font-family: "IBM Plex Sans", sans-serif;
   font-weight: 700;
@@ -57,8 +54,8 @@
   line-height: 1.625rem;
   text-transform: uppercase;
 
-  transition: all 0.2s;
-
+  border-radius: 0.313rem;
+  transition-duration: 0.2s;
   cursor: pointer;
 }
 
@@ -67,18 +64,18 @@
 }
 
 .modal footer .button:first-child {
-  color: var(--color-cancel-text);
   background-color: var(--color-cancel);
+  color: var(--color-cancel-text);
 }
 
 .modal footer .button:first-child:hover {
-  background: var(--color-cancel-hover);
+  background-color: var(--color-cancel-hover);
 }
 
 .modal footer .button:last-child {
-  background: var(--color-delete);
+  background-color: var(--color-delete);
 }
 
 .modal footer .button:last-child:hover {
-  background: var(--color-delete-hover);
+  background-color: var(--color-delete-hover);
 }

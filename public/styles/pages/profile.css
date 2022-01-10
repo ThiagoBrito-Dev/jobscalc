@@ -1,16 +1,15 @@
-#page-profile .page-header ~ .container {
+#page-profile .page-header ~ .content-container {
   display: flex;
 }
 
 aside.card {
+  text-align: center;
   width: 22rem;
   margin-right: 8rem;
-  text-align: center;
   padding: 3.875rem 4.625rem;
 
-  background: var(--color-card-background);
+  background-color: var(--color-card-background);
   color: var(--color-card-title);
-
   border: 1px solid var(--color-hairline-in-light);
   border-radius: 0.313rem;
 }
@@ -19,19 +18,18 @@ aside img {
   width: 11.25rem;
   height: 11.25rem;
   object-fit: cover;
-
-  border-radius: 50%;
-  border: 0.25rem var(--color-secondary) solid;
   margin-bottom: 1.5rem;
+
+  border: 0.25rem var(--color-secondary) solid;
+  border-radius: 50%;
 }
 
 aside h2 {
+  margin-bottom: 3.875rem;
   font-family: "IBM Plex Sans", sans-serif;
   font-weight: 600;
   font-size: 1.75rem;
   line-height: 1.875rem;
-
-  margin-bottom: 3.875rem;
 }
 
 aside p {

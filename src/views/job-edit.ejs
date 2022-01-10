@@ -11,7 +11,7 @@
   <body id="page-job-edit">
     <%- include('parts/page-header', { title: "Editar Job" }) %>
 
-    <div class="container flex animate-up delay-2">
+    <div class="content-container flex animate-up delay-2">
       <main>
         <form action="/job/edit/<%= job.id %>" method="POST" id="form-job">
           <fieldset>
@@ -50,27 +50,20 @@
           </fieldset>
         </form>
       </main>
+
       <aside class="card">
-        <img src="/images/money-color.svg" alt="Imagem de Dinheiro" />
+        <img src="/images/money-color.svg" alt="Pacote de dinheiro" />
         <p>
           O valor do projeto ficou em
           <strong><%= job.budget %></strong>
         </p>
+
         <div class="button-group">
-          <button
-            class="button green"
-            form="form-job"
-            type="submit"
-            title="Salvar Dados"
-          >
+          <button class="button green" form="form-job" type="submit">
             Salvar
           </button>
-          <a href="#" class="button gray open-modal">
-            <img
-              src="/images/trash-24.svg"
-              alt="Cancelar cadastro"
-              title="Cancelar cadastro"
-            />
+          <a href="#" class="button gray open-modal" title="Cancelar cadastro">
+            <img src="/images/trash-24.svg" alt="" />
           </a>
         </div>
       </aside>

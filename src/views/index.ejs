@@ -9,12 +9,12 @@
   </head>
   <body id="page-index">
     <header class="page-header">
-      <div class="container">
+      <div class="content-container">
         <section id="top" class="animate-up">
-          <h2 class="sr-only">Homepage</h2>
+          <h2 class="sr-only" lang="en">Homepage</h2>
 
-          <img src="/images/logo.svg" alt="Logo" id="logo" />
-          <img src="/images/logo-alt.svg" alt="Logo" id="logo-alt" />
+          <img src="/images/logo.svg" id="logo" alt="JobsCalc" />
+          <img src="/images/logo-alt.svg" id="logo-alt" alt="JobsCalc" />
 
           <span id="notification">
             <img src="/images/alert-octagon.svg" alt="Alerta" />
@@ -23,17 +23,15 @@
             seu dia <% } else { %> Você tem <%= freeHours %> horas livres no seu
             dia <% } %>
           </span>
+
           <div>
             <a href="/profile" id="avatar-profile">
               <p><%= profile.name %><span>Ver perfil</span></p>
-              <img src="<%= profile.avatar %>" alt="Thiago Brito" />
+              <img src="<%= profile.avatar %>" alt="" />
             </a>
-            <button id="theme-switcher" class="v-switcher" type="button">
-              <span class="sr-only">Habilitar tema escuro</span>
-              <span>
-                <img id="theme-icon" src="/images/sun.svg" alt="Ícone de sol" />
-              </span>
-            </button>
+
+            <%- include("parts/theme-switcher", { switcherClass: "v-switcher" })
+            %>
           </div>
         </section>
 
@@ -48,10 +46,12 @@
               <% if (statusesCount.total === 1) { %> Projeto ao total <% } else
               { %> Projetos ao total <% } %>
             </p>
+
             <p class="in-progress">
               <strong><%= statusesCount.progress %></strong>
               Em andamento
             </p>
+
             <p class="finished">
               <strong><%= statusesCount.done %></strong>
               <% if (statusesCount.done === 1) { %> Encerrado <% } else { %>
@@ -59,16 +59,17 @@
             </p>
           </div>
           <a class="button orange" href="/job">
-            <span>
-              <img src="/images/plus-24.svg" alt="Novo Job" />
+            <span aria-hidden="true">
+              <img src="/images/plus-24.svg" alt="" />
             </span>
-            Adicionar novo job
+
+            <p>Adicionar novo <span lang="en">Job</span></p>
           </a>
         </section>
       </div>
     </header>
 
-    <main class="container">
+    <main class="content-container">
       <section class="animate-up delay-2">
         <h1 class="sr-only">Trabalhos</h1>
 
@@ -76,15 +77,18 @@
           <% jobs.forEach((job) => { %>
           <div class="card <%= job.status %>" data-id="<%= job.id %>">
             <div class="id column"><%= job.id %></div>
+
             <div class="name column"><%= job.name %></div>
+
             <div class="deadline column">
               <span>Prazo</span>
+
               <% if (job.status == "unstarted") { %>
               <span
                 title="O prazo para a entrega de um projeto é definido no momento em que o mesmo é iniciado"
               >
                 Indefinido
-                <img src="/images/help.svg" alt="Ícone de informação" />
+                <img src="/images/help.svg" alt="Mais informações" />
               </span>
               <% } else { %>
               <p>
@@ -96,6 +100,7 @@
               </p>
               <% } %>
             </div>
+
             <div class="amount column">
               <span>Valor</span>
 
@@ -103,19 +108,22 @@
               <p><%= job.budget %></p>
               <% } else { %>
               <span
-                title="Preencha os dados do seu perfil para ter acesso ao valor dos projetos"
+                title="Preencha os dados do seu perfil para ter acesso ao valor de seus projetos"
               >
                 Indefinido
-                <img src="/images/help.svg" alt="Ícone de informação" />
+                <img src="/images/help.svg" alt="Mais informações" />
               </span>
               <% } %>
             </div>
+
             <div class="status badge column">
               <%= job.status == "unstarted" ? "Não iniciado" : job.status ==
               "done" ? "Encerrado" : "Em andamento" %>
             </div>
+
             <div class="actions column flex">
               <p class="sr-only">Ações</p>
+
               <% if (job.status == "unstarted") { %>
               <form action="/job/start/<%= job.id %>" method="POST">
                 <button
@@ -123,19 +131,22 @@
                   class="start button white"
                   title="Iniciar Job"
                 >
-                  <img src="/images/play.svg" alt="Iniciar Job" />
+                  <img src="/images/play.svg" alt="" />
+                  <!-- the image above has an empty alt value because, according to my research, some screen readers read the title attribute present in the button -->
                 </button>
               </form>
               <% } %>
+
               <a
                 href="/job/edit/<%= job.id %>"
                 class="edit button white"
                 title="Editar Job"
               >
-                <img src="/images/edit-24.svg" alt="Editar Job" />
+                <img src="/images/edit-24.svg" alt="" />
               </a>
+
               <button class="delete button white" title="Excluir Job">
-                <img src="/images/trash-24.svg" alt="Excluir Job" />
+                <img src="/images/trash-24.svg" alt="" />
               </button>
             </div>
           </div>
