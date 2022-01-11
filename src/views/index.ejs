@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="/styles/partials/modal.css" />
     <link rel="stylesheet" href="/styles/pages/index.css" />
 
-    <script src="/scripts/index.js" type="module" defer></script>
+    <script src="/scripts/pages/index.js" type="module" defer></script>
   </head>
   <body id="page-index">
     <header class="page-header">
@@ -13,11 +13,15 @@
         <section id="top" class="animate-up">
           <h2 class="sr-only" lang="en">Homepage</h2>
 
-          <img src="/images/logo.svg" id="logo" alt="JobsCalc" />
-          <img src="/images/logo-alt.svg" id="logo-alt" alt="JobsCalc" />
+          <img src="/images/logo.svg" id="logo" alt="JobsCalc. Logotipo" />
+          <img
+            src="/images/logo-alt.svg"
+            id="logo-alt"
+            alt="JobsCalc. Logotipo"
+          />
 
           <span id="notification">
-            <img src="/images/alert-octagon.svg" alt="Alerta" />
+            <img src="/images/alert-octagon.svg" alt="Alerta. Ilustração." />
             <% if (freeHours <= 0) { %> Você não possui horas livres <% } else
             if (freeHours === 1) { %> Você tem <%= freeHours %> hora livre no
             seu dia <% } else { %> Você tem <%= freeHours %> horas livres no seu
@@ -88,7 +92,10 @@
                 title="O prazo para a entrega de um projeto é definido no momento em que o mesmo é iniciado"
               >
                 Indefinido
-                <img src="/images/help.svg" alt="Mais informações" />
+                <img
+                  src="/images/help.svg"
+                  alt="Obter mais informações. Ilustração."
+                />
               </span>
               <% } else { %>
               <p>
@@ -111,7 +118,10 @@
                 title="Preencha os dados do seu perfil para ter acesso ao valor de seus projetos"
               >
                 Indefinido
-                <img src="/images/help.svg" alt="Mais informações" />
+                <img
+                  src="/images/help.svg"
+                  alt="Obter mais informações. Ilustração."
+                />
               </span>
               <% } %>
             </div>
@@ -132,7 +142,9 @@
                   title="Iniciar Job"
                 >
                   <img src="/images/play.svg" alt="" />
-                  <!-- the image above has an empty alt value because, according to my research, some screen readers read the title attribute present in the button -->
+                  <span class="sr-only"
+                    >Iniciar <span lang="en">Job</span></span
+                  >
                 </button>
               </form>
               <% } %>
@@ -143,10 +155,12 @@
                 title="Editar Job"
               >
                 <img src="/images/edit-24.svg" alt="" />
+                <span class="sr-only">Editar <span lang="en">Job</span></span>
               </a>
 
               <button class="delete button white" title="Excluir Job">
                 <img src="/images/trash-24.svg" alt="" />
+                <span class="sr-only">Excluir <span lang="en">Job</span></span>
               </button>
             </div>
           </div>

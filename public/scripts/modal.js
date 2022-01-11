@@ -1,20 +1,60 @@
-export default function Modal({ animateClasses = [] }) {
+export default function Modal({ animationClasses = [] }) {
   const wrapper = document.querySelector(".modal-wrapper");
-  const element = document.querySelector(".modal");
-  const cancelButton = element.querySelector("footer .button:nth-child(1)");
+  const modal = document.querySelector(".modal");
+  const btnClose = document.getElementById("close-modal");
+  let lastFocusedElement;
 
-  cancelButton.addEventListener("click", close);
+  btnClose.addEventListener("click", close);
+
+  function handleFocus() {
+    if (wrapper.classList.value.includes("on")) {
+      lastFocusedElement.focus();
+      return;
+    }
+
+    lastFocusedElement = document.activeElement;
+    setTimeout(() => {
+      modal.focus();
+    }, 300);
+  }
 
   function open() {
-    document.addEventListener("keydown", closeOnEscape);
+    handleFocus();
+
+    document.body.addEventListener("keydown", createFocusTrap);
+    document.body.addEventListener("keyup", closeOnEscape);
+
     wrapper.classList.add("on");
-    element.classList.add(...animateClasses);
+    modal.classList.add(...animationClasses);
+  }
+
+  function createFocusTrap(event) {
+    if (event.key == "Tab") {
+      const focusedElement = document.activeElement;
+
+      if (event.shiftKey) {
+        if (
+          focusedElement.classList.value.includes("modal") ||
+          focusedElement === btnClose
+        ) {
+          event.preventDefault();
+        }
+      } else {
+        if (focusedElement === btnClose.nextElementSibling) {
+          event.preventDefault();
+        }
+      }
+    }
   }
 
   function close() {
-    document.removeEventListener("keydown", closeOnEscape);
+    handleFocus();
+
+    document.body.removeEventListener("keydown", createFocusTrap);
+    document.body.removeEventListener("keyup", closeOnEscape);
+
     wrapper.classList.remove("on");
-    element.classList.remove(...animateClasses);
+    modal.classList.remove(...animationClasses);
   }
 
   function closeOnEscape({ key }) {

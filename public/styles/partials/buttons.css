@@ -13,7 +13,7 @@
   border: none;
   border-radius: 0.313rem;
   cursor: pointer;
-  transition-duration: 0.5s;
+  transition: background-color 0.5s;
 }
 
 button.button {
@@ -22,7 +22,7 @@ button.button {
 
 .button.orange {
   background-color: var(--color-secondary);
-  color: var(--color-text);
+  color: var(--color-primary);
 }
 
 .button.orange:hover {
@@ -62,7 +62,7 @@ button.button {
 }
 
 .button.white:hover {
-  background-color: var(--color-plus-background);
+  background-color: var(--color-button-background);
 }
 
 .button-group {

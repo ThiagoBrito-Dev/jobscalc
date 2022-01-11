@@ -11,31 +11,32 @@
   --color-text: #fcfdff;
 
   --color-primary: #41414c;
-  --color-secondary: #f1972c;
+  --color-secondary: #f59a2e;
   --color-secondary-hover: #d88014;
 
   --color-input-background: #f8f8fc;
   --color-input-text: #464652;
   --color-button-text: #fff;
+  --color-button-background: #edeff3;
   --color-switcher-track: #fcfdff;
-  --color-plus-background: #f0f2f5;
-  --color-hairline-in-dark: #4f4f5b;
+  --color-plus-background: #e0e3e6;
+  --color-hairline-in-dark: #4c4c58;
   --color-hairline-in-light: #e1e3e5;
 
   --color-card-border: #e1e3e5;
   --color-card-background: #fcfdff;
   --color-card-initial-gradient: rgba(250, 156, 45, 0.175);
-  --color-card-title: #5a5a66;
-  --color-card-label: #bfbfcc;
-  --color-card-content: #787880;
+  --color-card-title: #44444c;
+  --color-card-label: #74747c;
+  --color-card-content: #6d6d76;
 
   --color-cancel: #e1e3e5;
   --color-cancel-hover: #e7e9eb;
   --color-cancel-text: #484853;
-  --color-delete: #eb3b35;
-  --color-delete-hover: #fd3b34;
-  --color-save: #36b336;
-  --color-save-hover: #3cc73c;
+  --color-delete: #a32a25;
+  --color-delete-hover: #972622;
+  --color-save: #008900;
+  --color-save-hover: #028302;
 
   --color-badge-unstarted-background: #eaeaee;
   --color-badge-progress-text: #006000;
@@ -43,7 +44,7 @@
   --color-badge-done-text: #9d1b16;
   --color-badge-done-background: #faeceb;
 
-  --color-header-inner-title: #bfbfcc;
+  --color-header-inner-title: #d8d8e5;
 }
 
 :root.dark-theme {
@@ -51,10 +52,10 @@
   --color-switcher-track: #353538;
   --color-hairline-in-light: #45454e;
 
-  --color-card-background: #555558;
+  --color-card-background: #4f4f52;
   --color-card-title: #fcfdff;
-  --color-card-border: #696969;
-  --color-card-label: #a5a5b1; /* #cbcbd5 */
+  --color-card-border: #595959;
+  --color-card-label: #c2c2d1;
   --color-card-content: #c5c5c5;
 
   --color-cancel: #353537;

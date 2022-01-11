@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/styles/partials/modal.css" />
     <link rel="stylesheet" href="/styles/pages/job.css" />
 
-    <script src="/scripts/job-edit.js" type="module" defer></script>
+    <script src="/scripts/pages/job-edit.js" type="module" defer></script>
   </head>
   <body id="page-job-edit">
     <%- include('parts/page-header', { title: "Editar Job" }) %>
@@ -52,7 +52,10 @@
       </main>
 
       <aside class="card">
-        <img src="/images/money-color.svg" alt="Pacote de dinheiro" />
+        <img
+          src="/images/money-color.svg"
+          alt="Pacote de dinheiro em verde e amarelo. Ilustração."
+        />
         <p>
           O valor do projeto ficou em
           <strong><%= job.budget %></strong>
@@ -62,9 +65,11 @@
           <button class="button green" form="form-job" type="submit">
             Salvar
           </button>
-          <a href="#" class="button gray open-modal" title="Cancelar cadastro">
+
+          <button class="button gray open-modal" title="Excluir Job">
             <img src="/images/trash-24.svg" alt="" />
-          </a>
+            <span class="sr-only">Excluir <span lang="en">Job</span></span>
+          </button>
         </div>
       </aside>
     </div>

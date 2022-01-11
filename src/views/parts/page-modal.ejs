@@ -1,11 +1,9 @@
 <div class="modal-wrapper">
-  <div class="modal">
-    <header>
-      <img src="/images/trash-48.svg" alt="" />
-    </header>
+  <div class="modal" tabindex="-1">
+    <img src="/images/trash-48.svg" alt="" />
 
     <section>
-      <h3>Excluir Job</h3>
+      <h2>Excluir Job</h2>
       <p>
         Quer mesmo excluir esse job? <br />
         Ele será apagado para sempre.
@@ -13,7 +11,7 @@
     </section>
 
     <footer>
-      <a class="button gray" href="#">Cancelar</a>
+      <button id="close-modal" class="button gray">Cancelar</button>
       <button class="button red" type="submit" form="delete-job">
         Excluir Job
       </button>

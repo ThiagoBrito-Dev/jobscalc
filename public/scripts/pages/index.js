@@ -1,9 +1,9 @@
-import Modal from "./modal.js";
+import Modal from "../modal.js";
 
-const modal = Modal({ animateClasses: ["animate-pop", "back"] });
+const modal = new Modal({ animationClasses: ["animate-pop", "back"] });
 
 const cards = document.querySelectorAll(".cards .card");
-const deleteForm = document.querySelector("#delete-job");
+const deleteForm = document.getElementById("delete-job");
 
 for (let card of cards) {
   const cardId = card.dataset.id;
