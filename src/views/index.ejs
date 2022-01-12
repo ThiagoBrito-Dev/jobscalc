@@ -88,7 +88,8 @@
               <span>Prazo</span>
 
               <% if (job.status == "unstarted") { %>
-              <span
+              <p
+                class="pointer"
                 title="O prazo para a entrega de um projeto é definido no momento em que o mesmo é iniciado"
               >
                 Indefinido
@@ -96,7 +97,7 @@
                   src="/images/help.svg"
                   alt="Obter mais informações. Ilustração."
                 />
-              </span>
+              </p>
               <% } else { %>
               <p>
                 <% if (job.hasLessThanOneDayToFinish) { %> <%=
@@ -114,7 +115,8 @@
               <% if (job.unformattedBudget) { %>
               <p><%= job.budget %></p>
               <% } else { %>
-              <span
+              <p
+                class="pointer"
                 title="Preencha os dados do seu perfil para ter acesso ao valor de seus projetos"
               >
                 Indefinido
@@ -122,7 +124,7 @@
                   src="/images/help.svg"
                   alt="Obter mais informações. Ilustração."
                 />
-              </span>
+              </p>
               <% } %>
             </div>
 
@@ -142,9 +144,7 @@
                   title="Iniciar Job"
                 >
                   <img src="/images/play.svg" alt="" />
-                  <span class="sr-only"
-                    >Iniciar <span lang="en">Job</span></span
-                  >
+                  <p class="sr-only">Iniciar <span lang="en">Job</span></p>
                 </button>
               </form>
               <% } %>
@@ -155,12 +155,12 @@
                 title="Editar Job"
               >
                 <img src="/images/edit-24.svg" alt="" />
-                <span class="sr-only">Editar <span lang="en">Job</span></span>
+                <p class="sr-only">Editar <span lang="en">Job</span></p>
               </a>
 
               <button class="delete button white" title="Excluir Job">
                 <img src="/images/trash-24.svg" alt="" />
-                <span class="sr-only">Excluir <span lang="en">Job</span></span>
+                <p class="sr-only">Excluir <span lang="en">Job</span></p>
               </button>
             </div>
           </div>

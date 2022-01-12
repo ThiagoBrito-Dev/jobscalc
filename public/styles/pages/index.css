@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 1.5rem;
 }
 
 #logo {
@@ -54,6 +55,7 @@
 }
 
 #avatar-profile p {
+  min-width: 7.5rem;
   margin-right: 0.75rem;
 
   font-weight: 600;
@@ -96,12 +98,11 @@
 /* --------------------------------------------------- */
 #summary .info {
   display: flex;
+  gap: 2.25rem;
   font-family: "Inter", sans-serif;
 }
 
 .info > p {
-  margin-right: 2.5rem;
-
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.625rem;
@@ -162,7 +163,7 @@ main > section {
   position: relative;
 
   display: grid;
-  grid-template-columns: 5% 35% 20% 15% 15% 10%;
+  grid-template-columns: 5% 35% 17.5% 15% 17.5% 10%;
   align-items: center;
 
   margin-bottom: 0.5rem;
@@ -199,7 +200,7 @@ main > section {
   justify-self: flex-end;
 }
 
-.card .column span:first-of-type {
+.card .column span {
   display: block;
 
   font-family: "Inter", sans-serif;
@@ -209,13 +210,13 @@ main > section {
   text-transform: uppercase;
 }
 
-.card .column span:last-child {
+.card .column p.pointer {
   display: flex;
   align-items: center;
   cursor: pointer;
 }
 
-.card .column span:last-child img {
+.card .column p.pointer img {
   width: 1rem;
   height: 1rem;
   margin-left: 0.25rem;
@@ -239,7 +240,7 @@ main > section {
 }
 
 .column.deadline p {
-  padding-right: 0.75rem;
+  padding-right: 1rem;
 }
 
 .column.actions form {
@@ -256,27 +257,21 @@ main > section {
   height: 1.6rem;
 }
 
-@media (max-width: 1390px) {
+@media (max-width: 1210px) {
   .card {
-    grid-template-columns: 5% 30% 20% 15% 17.25% 12.25%;
+    grid-template-columns: 5% 30% 17.5% 15% 19.75% 12.25%;
   }
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1050px) {
   .card {
-    grid-template-columns: 5% 27.75% 21% 15% 17.25% 14%;
+    grid-template-columns: 5% 25% 17.5% 16.5% 21.25% 14%;
   }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 950px) {
   .card {
-    grid-template-columns: 5% 26.75% 21.25% 15% 17.25% 14.75%;
-  }
-}
-
-@media (max-width: 970px) {
-  .card {
-    grid-template-columns: 30% 23% 13% 20.25% 13.75%;
+    grid-template-columns: 25% 17.5% 18.5% 25.75% 13.75%;
   }
 
   .column.id {
@@ -284,13 +279,7 @@ main > section {
   }
 }
 
-@media (max-width: 840px) {
-  .card {
-    grid-template-columns: 25% 23% 13.25% 20.25% 18.5%;
-  }
-}
-
-@media (max-width: 770px) {
+@media (max-width: 750px) {
   .card {
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
@@ -303,28 +292,41 @@ main > section {
   .column.name {
     grid-area: lt;
   }
+
   .column.deadline {
     grid-area: lm;
   }
+
   .column.amount {
     grid-area: lb;
   }
+
   .column.status {
     justify-self: end;
     grid-area: rt;
   }
+
   .column.actions {
     grid-area: rb;
   }
 }
 
-@media (max-width: 470px) {
+@media (max-width: 685px) {
+  #logo {
+    display: none;
+  }
+
+  #logo-alt {
+    display: block;
+  }
+
   #summary {
     margin: 1.2rem 0;
   }
 
   #summary .info {
     flex-direction: column;
+    gap: 0.5rem;
   }
 
   #summary .info > p {
@@ -333,22 +335,13 @@ main > section {
     margin-right: 0;
   }
 
-  #summary .info > p + p {
-    margin-top: 0.4rem;
-  }
-
   .info > p > strong {
-    display: inline;
-    margin-right: 0.6rem;
+    margin-right: 0.5rem;
   }
 }
 
-@media (max-width: 428px) {
-  #logo {
+@media (max-width: 420px) {
+  #avatar-profile p {
     display: none;
-  }
-
-  #logo-alt {
-    display: block;
   }
 }

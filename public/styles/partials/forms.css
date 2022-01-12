@@ -15,7 +15,7 @@ form fieldset legend {
 }
 
 fieldset .separator {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 form .input-group {
@@ -34,12 +34,12 @@ form .input-group .input-wrapper + .input-wrapper {
 fieldset > .input-wrapper:last-child {
   display: flex;
   align-items: center;
-  margin-top: 1rem;
+  margin-top: 1.25rem;
 }
 
 fieldset > .input-wrapper:last-child input {
-  width: 1rem;
-  height: 1rem;
+  width: 1.0625rem;
+  height: 1.0625rem;
   margin-right: 0.375rem;
   accent-color: var(--color-secondary-hover);
 }
@@ -76,4 +76,15 @@ input:not([type="checkbox"]) {
 
 ::placeholder {
   color: var(--color-card-label);
+}
+
+@media (max-width: 350px) {
+  form .input-group {
+    flex-direction: column;
+  }
+
+  form .input-group .input-wrapper + .input-wrapper {
+    margin-left: 0;
+    margin-top: 1.5rem;
+  }
 }
