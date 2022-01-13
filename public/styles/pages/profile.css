@@ -18,14 +18,14 @@ aside img {
   width: 11.25rem;
   height: 11.25rem;
   object-fit: cover;
-  margin-bottom: 1.5rem;
 
   border: 0.25rem var(--color-secondary) solid;
   border-radius: 50%;
 }
 
 aside h2 {
-  margin-bottom: 3.875rem;
+  margin: 1.5rem 0 3.875rem;
+
   font-family: "IBM Plex Sans", sans-serif;
   font-weight: 600;
   font-size: 1.75rem;
