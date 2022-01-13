@@ -63,6 +63,11 @@
   --color-cancel-text: #fcfdff;
 }
 
+::selection {
+  background-color: var(--color-secondary-hover);
+  color: #2d2d34;
+}
+
 /* TAGS STYLES */
 body {
   background-color: var(--color-background);
